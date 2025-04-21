@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Calculator</title>
+    <style>
+        body {
+            font-family: Verdana, sans-serif; 
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .calc-box {
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #aaa;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 220px;
+        }
+        #screen {
+            width: 100%;
+            height: 40px;
+            text-align: right;
+            font-size: 22px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .btn-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 6px;
+        }
+        button {
+            height: 40px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #eee;
+        }
+        .ops { background-color: #ffa500; }
+        .clr { background-color: #e74c3c; color: white; }
+        .eq { background-color: #2ecc71; color: white; grid-column: span 2; }
+    </style>
+</head>
+<body>
+
+    <div class="calc-box">
+        <input type="text" id="screen" readonly>
+        <div class="btn-grid">
+            <button onclick="insertValue('1')">1</button>
+            <button onclick="insertValue('2')">2</button>
+            <button onclick="insertValue('3')">3</button>
+            <button class="ops" onclick="insertValue('+')">+</button>
+            
+            <button onclick="insertValue('4')">4</button>
+            <button onclick="insertValue('5')">5</button>
+            <button onclick="insertValue('6')">6</button>
+            <button class="ops" onclick="insertValue('-')">/</button>
+            
+            <button onclick="insertValue('7')">7</button>
+            <button onclick="insertValue('8')">8</button>
+            <button onclick="insertValue('9')">9</button>
+            <button class="ops" onclick="insertValue('*')">×</button>
+            
+            <button class="clr" onclick="resetScreen()">C</button>
+            <button onclick="insertValue('0')">0</button>
+            <button class="eq" onclick="showResult()">=</button>
+        </div>
+    </div>
+
+    <script>
+
+        function insertValue(val) {
+            document.getElementById('screen').value += val;
+        }
+
+        function resetScreen() {
+            document.getElementById('screen').value = '';
+        }
+
+        function showResult() {
+            try {
+                const expression = document.getElementById('screen').value;
+                const answer = eval(expression); 
+                document.getElementById('screen').value = answer;
+            } catch (err) {
+                document.getElementById('screen').value = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>
+
