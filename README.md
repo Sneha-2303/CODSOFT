@@ -1,4 +1,4 @@
-# CODSOFT
+
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 <code>
 x = 5;
 y = 6;
-z = x + y;
+z = x - y;
 </code>
 
 </body>
