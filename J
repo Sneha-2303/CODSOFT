@@ -1,0 +1,31 @@
+Open terminal
+-ngrok http 8080
+-open forwarding link right click open link visit site
+- jenkin new item
+- enter name demon click on freestyle project
+-ok
+- source code management 
+  Choose git
+  Repository url (paste github project) 
+  Branch specifier check main Or master
+  build trigger
+- hook trigger apply then save
+- go to github acc open github setting 
+  Webhook
+ - add webhook
+- pwd put GitHub pwd
+-payload url put forwarding url copy
+-content json select application
+- build now, refresh, green tick
+
+Cd
+- sudo nautilus
+- password
+File other location - Ubuntu/var/www/html/ folder name
+-sudo chown -R jenkins: jenkins/var/www/html/folder name
+- open jenkins -configure
+  add build steps execute shell
+  cp -r */var/www/html/foldername/
+   Apply and save
+- Build now and refresh
+- open browser 0.0.0.0/sne1/msc.html
