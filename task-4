@@ -1,0 +1,9 @@
+docker file command
+FROM httpd:2.4
+COPY index.html /usr/local/apache2/htdocs/
+
+terminal commands
+ sudo docker build -t my-web-server
+sudo docker run -p 8092:80 -d my-web-server
+
+http//localhost:8092
