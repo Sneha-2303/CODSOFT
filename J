@@ -1,31 +1,44 @@
-Open terminal
--ngrok http 8080
--open forwarding link right click open link visit site
-- jenkin new item
-- enter name demon click on freestyle project
--ok
-- source code management 
-  Choose git
-  Repository url (paste github project) 
-  Branch specifier check main Or master
-  build trigger
-- hook trigger apply then save
-- go to github acc open github setting 
-  Webhook
- - add webhook
-- pwd put GitHub pwd
--payload url put forwarding url copy
--content json select application
-- build now, refresh, green tick
+1.  ngrok http 8080
+- click on teh forwarding link to open jenkins in browser, then "Visit Site"
+- 
 
-Cd
-- sudo nautilus
-- password
-File other location - Ubuntu/var/www/html/ folder name
--sudo chown -R jenkins: jenkins/var/www/html/folder name
-- open jenkins -configure
-  add build steps execute shell
-  cp -r */var/www/html/foldername/
-   Apply and save
-- Build now and refresh
-- open browser 0.0.0.0/sne1/msc.html
+### CI
+
+2.  click on "New item"
+- enter name "myfirstjob"
+- select "Freestyle project"
+- click "OK"
+
+- then in "Genreal" click in "socurecode management" select "git"
+- enter repo link "
+- Branche specifier: main or master
+- Build Tigger
+
+- Gitube hook trigger for git scame polling
+- Apply then Save
+
+- Go to Gitub repo -> "Settings" -> "Webhooks" -> "Add webhook"
+- Payload URL: paste the ngrok forwarding link + "/github-webhook/"
+- Content type: application/json
+- click "Add webhook"
+
+
+### CD
+
+- other location -> ubuntu -> var -> www -> html 
+- sudo mkdir new
+- sudo chown -R jenkins:jenkins /var/www/html/new/
+
+- congigure jenkins job
+- add build step -> select "Execute shell"
+- cp -r * /var/www/html/new/
+
+- build now
+
+- go to http://0.0.0.0/new/index.html to see the changes
+
+
+sudo nautilus
+- open file manager with root privileges
+
+https://ruthann-briefless-nonscholastically.
